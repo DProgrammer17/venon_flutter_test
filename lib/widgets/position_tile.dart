@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:venon_flutter_test/customs/search_click_listner.dart';
 
 class PositionTile extends StatefulWidget{
   final String? imageLink;
@@ -13,6 +14,16 @@ class PositionTile extends StatefulWidget{
 }
 
 class _PositionTileState extends State<PositionTile>{
+  SearchListner searchListner = new SearchListner();
+
+  @override
+  void initState() {
+    searchListner.addListener(() {
+      print('updated');
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -43,14 +54,22 @@ class _PositionTileState extends State<PositionTile>{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '${widget.employeeName}',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 14,
-                    color: Theme.of(context)
-                        .primaryColorLight,
-                    fontWeight: FontWeight.w600,
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      searchListner.toggleSearch();
+                      print(searchListner.searchBarClicked);
+                    });
+                  },
+                  child: Text(
+                    '${widget.employeeName}',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 14,
+                      color: Theme.of(context)
+                          .primaryColorLight,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 SizedBox(height: 3),

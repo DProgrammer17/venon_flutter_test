@@ -3,6 +3,7 @@ import 'package:venon_flutter_test/customs/search_click_listner.dart';
 import 'package:venon_flutter_test/ui/analytics/analytics.dart';
 import 'package:venon_flutter_test/ui/listings/listings.dart';
 import 'package:venon_flutter_test/ui/search_employee/search.dart';
+import 'package:venon_flutter_test/ui/search_employee/search_alt.dart';
 
 class BottomNavIndex extends StatefulWidget{
   final int index;
@@ -17,12 +18,19 @@ class _BottomNavIndexState extends State<BottomNavIndex>{
   bool searchClick = false;
   int _selectedIndex = 0;
 
+
+  @override
+  void initState() {
+    _selectedIndex = widget.index != 4 ? 0 : 4;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        child: widget.index != 4 ? _pages.elementAt(_selectedIndex) : _pages.elementAt(widget.index),
+        child: _pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: SizedBox(
         height: 70,
@@ -130,7 +138,7 @@ class _BottomNavIndexState extends State<BottomNavIndex>{
   static List<Widget> _pages = <Widget>[
     Container(),
     Listings(),
-    Search(),
+    SearchAlt(),
     Container(),
     Analytics(),
   ];

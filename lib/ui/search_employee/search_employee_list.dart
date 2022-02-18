@@ -65,7 +65,7 @@ class _SearchEmployeeListState extends State<SearchEmployeeList> {
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
-                             searchListner.searchBarClicked = false;
+                              searchListner.toggleSearch();
                                print(searchListner.searchBarClicked);
                             });
                           },

@@ -53,7 +53,7 @@ class _AnalyticsFurtherState extends State<AnalyticsFurther> {
                             child: Icon(
                               Icons.arrow_back_ios,
                               size: 18,
-                              color: Theme.of(context).primaryColorLight,
+                              color: Colors.black,
                             ),
                           ),
                         ),
@@ -73,30 +73,6 @@ class _AnalyticsFurtherState extends State<AnalyticsFurther> {
                       ),
                       Expanded(
                         child: SizedBox(width: size.width * 0.25),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            themeChanged = !themeChanged;
-                            currentTheme.toggleTheme();
-                          });
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 15),
-                          child: Container(
-                            child: themeChanged == false
-                                ? Icon(
-                                    Icons.light_mode_outlined,
-                                    size: 28,
-                                    color: Theme.of(context).primaryColorLight,
-                                  )
-                                : Icon(
-                                    Icons.dark_mode_outlined,
-                                    size: 28,
-                                    color: Theme.of(context).primaryColorLight,
-                                  ),
-                          ),
-                        ),
                       ),
                       Container(
                         height: 32,
@@ -979,12 +955,13 @@ class _AnalyticsFurtherState extends State<AnalyticsFurther> {
                                       const EdgeInsets.fromLTRB(0, 12, 0, 12),
                                       child: Center(
                                         child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
                                             Icon(
                                               Icons.group,
                                               size: 20,
-                                              color:
-                                              Theme.of(context).primaryColorLight,
+                                              color:Colors.black,
                                             ),
                                             SizedBox(width: 8),
                                             Text(
@@ -992,8 +969,7 @@ class _AnalyticsFurtherState extends State<AnalyticsFurther> {
                                               style: TextStyle(
                                                 fontFamily: 'Inter',
                                                 fontSize: 14,
-                                                color:
-                                                Theme.of(context).primaryColorLight,
+                                                color:Colors.black,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                             ),

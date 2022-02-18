@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:venon_flutter_test/customs/search_click_listner.dart';
 
 class EmployeeInfoTile extends StatefulWidget{
   final bool favClicked;
@@ -13,6 +14,17 @@ class EmployeeInfoTile extends StatefulWidget{
 }
 
 class _EmployeeInfoTileState extends State<EmployeeInfoTile>{
+  SearchListner searchListner = new SearchListner();
+
+  @override
+  void initState() {
+    searchListner.addListener(() {
+      print('updated');
+    });
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -81,10 +93,18 @@ class _EmployeeInfoTileState extends State<EmployeeInfoTile>{
               ],
             ),
             Expanded(child: SizedBox(width: 13),),
-            Icon(
-              Icons.more_horiz_outlined,
-              size: 20,
-              color: Theme.of(context).primaryColorLight,
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  searchListner.toggleSearch();
+                  print(searchListner.searchBarClicked);
+                });
+              },
+              child: Icon(
+                Icons.more_horiz_outlined,
+                size: 20,
+                color: Theme.of(context).primaryColorLight,
+              ),
             ),
           ],
         ),

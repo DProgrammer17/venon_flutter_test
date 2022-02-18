@@ -54,7 +54,7 @@ class _AnalyticsState extends State<Analytics> {
                             child: Icon(
                               Icons.arrow_forward_ios_outlined,
                               size: 18,
-                              color: Theme.of(context).primaryColorLight,
+                              color: Colors.black,
                             ),
                           ),
                         ),
@@ -145,13 +145,14 @@ class _AnalyticsState extends State<Analytics> {
                                     child: Icon(
                                       Icons.home_repair_service_outlined,
                                       size: 22,
-                                      color:
-                                          Theme.of(context).primaryColorLight,
+                                      color:Colors.black,
                                     ),
                                   ),
                                 ),
                                 SizedBox(width: 18),
                                 Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       '19.345',
@@ -230,13 +231,14 @@ class _AnalyticsState extends State<Analytics> {
                                     child: Icon(
                                       Icons.group,
                                       size: 22,
-                                      color:
-                                          Theme.of(context).primaryColorLight,
+                                      color:Colors.black,
                                     ),
                                   ),
                                 ),
                                 SizedBox(width: 18),
                                 Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       '19.345',
@@ -315,13 +317,14 @@ class _AnalyticsState extends State<Analytics> {
                                     child: Icon(
                                       Icons.home_repair_service_outlined,
                                       size: 22,
-                                      color:
-                                          Theme.of(context).primaryColorLight,
+                                      color:Colors.black,
                                     ),
                                   ),
                                 ),
                                 SizedBox(width: 18),
                                 Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       '19.345',
@@ -432,8 +435,7 @@ class _AnalyticsState extends State<Analytics> {
                                         child: Icon(
                                           Icons.bar_chart_outlined,
                                           size: 22,
-                                          color: Theme.of(context)
-                                              .primaryColorLight,
+                                          color: Colors.black,
                                         ),
                                       ),
                                     ),
@@ -871,6 +873,14 @@ class _AnalyticsState extends State<Analytics> {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(30)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: profileClicked == true ? Colors.grey.withOpacity(0.8) : Colors.transparent,
+                                            spreadRadius: 0,
+                                            blurRadius: 4,
+                                            offset: Offset(0,3), // changes position of shadow
+                                          ),
+                                        ],
                                         color: profileClicked == true
                                             ? Theme.of(context).backgroundColor
                                             : Colors.transparent,
@@ -887,13 +897,10 @@ class _AnalyticsState extends State<Analytics> {
                                             style: TextStyle(
                                               fontFamily: 'Inter',
                                               fontSize: 14,
-                                              color: Theme.of(context)
-                                                          .brightness
-                                                          .toString() ==
-                                                      'Brightness.light'
-                                                  ? Color(0xFF767676)
-                                                  : Colors.white
-                                                      .withOpacity(0.9),
+                                              color: profileClicked == true ? Theme.of(context)
+                                                  .brightness
+                                                  .toString() ==
+                                                  'Brightness.light' ? Theme.of(context).primaryColorDark :  Colors.white.withOpacity(0.9) : Theme.of(context).primaryColorDark,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
@@ -912,6 +919,14 @@ class _AnalyticsState extends State<Analytics> {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(30)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: jobClicked == true ? Colors.grey.withOpacity(0.8) : Colors.transparent,
+                                            spreadRadius: 0,
+                                            blurRadius: 4,
+                                            offset: Offset(0,3), // changes position of shadow
+                                          ),
+                                        ],
                                         color: jobClicked == true
                                             ? Theme.of(context).backgroundColor
                                             : Colors.transparent,
@@ -928,13 +943,10 @@ class _AnalyticsState extends State<Analytics> {
                                             style: TextStyle(
                                               fontFamily: 'Inter',
                                               fontSize: 14,
-                                              color: Theme.of(context)
-                                                          .brightness
-                                                          .toString() ==
-                                                      'Brightness.light'
-                                                  ? Color(0xFF767676)
-                                                  : Colors.white
-                                                      .withOpacity(0.9),
+                                              color: jobClicked == true ? Theme.of(context)
+                                                  .brightness
+                                                  .toString() ==
+                                                  'Brightness.light' ? Theme.of(context).primaryColorDark :  Colors.white.withOpacity(0.9) : Theme.of(context).primaryColorDark,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
@@ -1306,7 +1318,7 @@ class _AnalyticsState extends State<Analytics> {
                                       fontFamily: 'Inter',
                                       fontSize: 14,
                                       color:
-                                          Theme.of(context).primaryColorLight,
+                                          Colors.black,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),

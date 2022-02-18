@@ -10,8 +10,8 @@ class SearchListner extends ChangeNotifier{
   }
   //
   //
-  // void toggleSearch(){
-  //   searchBarClicked = !searchBarClicked;
-  //   notifyListeners();
-  // }
+  void toggleSearch(){
+    searchBarClicked = !searchBarClicked;
+    notifyListeners();
+  }
   }
